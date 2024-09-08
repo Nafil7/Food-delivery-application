@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Themed Food Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="logo">UMAI</div>
+
+            <div class="nav-center">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search Uber Eats..." onclick="toggleSuggestions()">
+                    <button class="search-btn">Search</button>
+                    <div id="suggestions-bar" class="suggestions hidden">
+                        <div class="suggestion-item" data-category="indian">
+                            Indian
+                            <button class="dropdown-btn">▼</button>
+                            <div class="dropdown-content">
+                                <!-- Dropdown options for Indian cuisine will be dynamically inserted here -->
+                            </div>
+                        </div>
+                        <div class="suggestion-item" data-category="chinese">
+                            Chinese
+                            <button class="dropdown-btn">▼</button>
+                            <div class="dropdown-content">
+                                <!-- Dropdown options for Chinese cuisine will be dynamically inserted here -->
+                            </div>
+                        </div>
+                        <div class="suggestion-item" data-category="american">
+                            American
+                            <button class="dropdown-btn">▼</button>
+                            <div class="dropdown-content">
+                                <!-- Dropdown options for American cuisine will be dynamically inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="cart-icon">🛒<span class="cart-count">0</span></div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Slide-Out Menu -->
+    <div id="side-menu" class="side-menu">
+        <a href="#" class="close-btn" onclick="closeMenu()">&times;</a>
+        <div class="profile-container">
+            <a href="profile.html">
+                <img src="https://i.pinimg.com/280x280_RS/3d/be/74/3dbe74abc3749ef5694fc7a2d5b497f2.jpg" alt="Profile Picture" id="homeProfilePic" class="profile-pic">
+            </a>
+        </div>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="#">Offers</a>
+        <a href="#">Orders</a>
+        <a href="#">Help</a>
+    </div>
+
+    <!-- Promotional Banner Section -->
+    <section class="promotional-banner">
+        <div class="banner">
+            <img src="biriyani.jpg" alt="Promotional Banner">
+            <div class="banner-text">
+                <h1>Craving Something Delicious? Let Us Deliver Your Favorite Meals Right to Your Door!</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="category">
+            <img src="https://media.istockphoto.com/id/477824425/photo/shopping-basket-with-food.jpg?s=612x612&w=0&k=20&c=6ENN3sDffC86LYrZRd4oIrByXxn1bq0Dw7CFeSjjCoE=" alt="Grocery">
+            <p>Grocery</p>
+        </div>
+        <div class="category">
+            <img src="https://images.squarespace-cdn.com/content/v1/5ec1febb58a4890157c8fbeb/19ebb9ed-4862-46e1-9f7c-4e5876730227/Beetroot-Burger.jpg" alt="Burger">
+            <p>Burger</p>
+        </div>
+        <div class="category">
+            <img src="pizza.png" alt="Pizza">
+            <p>Pizza</p>
+        </div>
+        <div class="category">
+            <img src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-01-triple-chocolate-mousse-cake%2Ftriple-chocolate-mousse-cake-0739" alt="Dessert">
+            <p>Dessert</p>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers">
+        <div class="offer">
+            <img src="https://images.ctfassets.net/5hs630wuugof/9Qk8WfaKJV9PBKcpid5NU/4119fbc9b2a90327c87d9c0e4cec2805/1813_2for5_Jumbo_Jack_Mobile_Banner_684x312.png" alt="Jack in the Box">
+            <p>Jack in the Box</p>
+        </div>
+        <div class="offer">
+            <img src="https://foodchainmagazine.com/wp-content/uploads/sites/10/2023/06/Subway.jpeg" alt="Subway">
+            <p>Subway</p>
+        </div>
+        <div class="offer">
+            <img src="https://www.mediainfoline.com/wp-content/uploads/2023/11/taco-bell-mediainfoline.jpg" alt="Taco Bell">
+            <p>Taco Bell</p>
+        </div>
+    </section>
+
+    <!-- Stores Section -->
+    <section class="stores">
+        <div class="store">
+            <img src="https://cdn.winsightmedia.com/platform/files/public/2020-03/background/7_eleven__inc__logo_1583178120.jpg?VersionId=1FApY5DbE6KxQkwDETuQUrdZpSdpsH2Q" alt="7-Eleven">
+            <p>7-Eleven</p>
+        </div>
+        <div class="store">
+            <img src="https://www.freeiconspng.com/uploads/walmart-logo-png-19.png" alt="Walmart">
+            <p>Lowe's</p>
+        </div>
+        <div class="store">
+            <img src="https://www.pngitem.com/pimgs/m/25-258191_am-pm-convenience-store-logo-hd-png-download.png" alt="AMPM">
+            <p>AMPM</p>
+        </div>
+        <div class="store">
+            <img src="https://d3lut3gzcpx87s.cloudfront.net/image_encoded/aHR0cHM6Ly9zaWxrc3RhcnQuczMuYW1hem9uYXdzLmNvbS81YjdkYmM0Yjg5M2FhYTI2YjZmMDAzNDguanBn/560x292" alt="BevMo!">
+            <p>BevMo!</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Help</a>
+        </div>
+        <p>© 2024 UMAI</p>
+    </footer>
+
+    <script src="script.js">
+         // Fetch stored profile picture and set it in the home page
+         const profilePic = localStorage.getItem("profilePic");
+        if (profilePic) {
+            document.getElementById("homeProfilePic").src = profilePic;
+        }
+    </script>
+</body>
+</html>

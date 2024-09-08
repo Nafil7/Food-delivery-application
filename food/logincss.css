@@ -1,0 +1,176 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 24px;
+    color: #ff9800;
+}
+
+/* Login Section */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin: 15px 0;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.register-text {
+    margin-top: 10px;
+}
+
+.register-text a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+/* Profile Section */
+.profile-section-main {
+    text-align: center;
+    margin: 50px;
+}
+
+.profile-details {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+.profile-details p {
+    margin: 10px 0;
+}
+
+.edit-profile-btn {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    color: #ffffff;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+}
+
+/* Profile Section in Nav */
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile-section span {
+    margin-right: 10px;
+}
+
+/* Side Menu */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1e1e1e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #333;
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    color: #ffffff;
+}

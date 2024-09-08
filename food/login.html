@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="logincss.css">
+</head>
+<body>
+    <header>
+        <div class="logo">UMAI</div>
+    </header>
+
+    <section class="login-section">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="dashboard.html" method="POST" id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <p class="signup-text">Don't have an account? <a href="signup.html">Sign Up Here</a></p>
+        </div>
+    </section>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            // Get the entered email and password from the login form
+            const enteredEmail = document.getElementById("email").value;
+            const enteredPassword = document.getElementById("password").value;
+    
+            // Retrieve the stored email and password from localStorage (this should be saved during sign-up)
+            const storedEmail = localStorage.getItem("email");
+            const storedPassword = localStorage.getItem("password");
+    
+            // Check if the entered credentials match the stored ones
+            if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+                // If credentials are correct, redirect to profile page
+                window.location.href = "profile.html";
+            } else {
+                // If credentials are incorrect, display an error message
+                alert("Invalid email or password. Please try again.");
+            }
+        });
+    </script>
+    
+
+    <footer>
+        <p>© 2024 UMAI</p>
+    </footer>
+</body>
+</html>

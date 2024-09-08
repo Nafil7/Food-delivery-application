@@ -1,0 +1,172 @@
+<!-- Profile Page (profile.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        header .logo {
+            font-size: 24px;
+            color: #ff9800;
+        }
+
+        header .home-btn {
+            padding: 10px 20px;
+            background-color: #ff9800;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        header .home-btn:hover {
+            background-color: #e68900;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 120px); /* Adjust for header and footer */
+            background-color: #121212;
+        }
+
+        .profile-container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .profile-container h2 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        /* Profile layout */
+        .profile-layout {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 4px solid #ff9800;
+        }
+
+        .profile-details {
+            flex-grow: 1;
+        }
+
+        .profile-details p {
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        .edit-profile-btn {
+            padding: 10px 20px;
+            background-color: #ff9800;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #e68900;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">UMAI</div>
+        <a href="food.html" class="home-btn">Home</a>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <h2>Profile</h2>
+            <div class="profile-layout">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-pic" id="profilePicture">
+                <div class="profile-details">
+                    <p><strong>Full Name:</strong> <span id="displayFullName"></span></p>
+                    <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+                    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                    <p><strong>Gender:</strong> <span id="displayGender"></span></p>
+                </div>
+            </div>
+            <button class="edit-profile-btn">Edit Profile</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 UMAI</p>
+    </footer>
+
+    <script>
+        // Fetch stored data from localStorage and display it
+        document.getElementById("displayFullName").textContent = localStorage.getItem("fullName");
+        document.getElementById("displayUsername").textContent = localStorage.getItem("username");
+        document.getElementById("displayEmail").textContent = localStorage.getItem("email");
+        document.getElementById("displayGender").textContent = localStorage.getItem("gender");
+
+        // Handle profile picture
+        const profilePic = localStorage.getItem("profilePic");
+        if (profilePic) {
+            document.getElementById("profilePicture").src = profilePic;
+        }
+
+        // Handle form submission or changes to the profile picture (if applicable)
+        document.querySelector('.edit-profile-btn').addEventListener('click', function() {
+            // Assuming you have a mechanism to update the profile picture URL in localStorage
+            const newProfilePicUrl = prompt("Enter the new profile picture URL:");
+            if (newProfilePicUrl) {
+                localStorage.setItem("profilePic", newProfilePicUrl);
+                document.getElementById("profilePicture").src = newProfilePicUrl;
+            }
+        });
+    </script>
+</body>
+</html>
